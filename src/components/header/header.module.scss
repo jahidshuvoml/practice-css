@@ -1,0 +1,173 @@
+@import '@/styles/index.scss';
+
+.header {
+    position: relative;
+    padding: 0 20px;
+
+    hr {
+        position: absolute;
+        width: 100vw;
+        height: 1px;
+        left: 0;
+        border: none;
+        background-color: $purple-accent;
+
+        &:first-child {
+            top: 72px;
+        }
+
+        &:nth-child(2) {
+            top: 152px;
+
+            @include device(tab, mobile) {
+                display: none;
+            }
+        }
+    }
+}
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+    height: 72px;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1192px;
+
+    :global {
+        .phoneNumber {
+            display: none;
+        }
+
+        @include device(tab) {
+            .phoneNumber {
+                display: flex;
+            }
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 123px;
+    p {
+        @include font(1.2rem, rgb($purple-accent, .6))
+    }
+}
+
+.searchBar {
+    position: relative;
+
+    input {
+        width: min(377px, 28vw);
+        height: 36px;
+        background-color: $light-gray;
+        color: $deep-gray;
+        border: none;
+        border-radius: 2px;
+        padding-left: 15px;
+
+        &::placeholder {
+            @include font(1.4rem, $deep-gray)
+        }
+    }
+
+    img {
+        position: absolute;
+        right: 8px;
+        top: 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    @include device(mobile) {
+        display: none;
+    }
+}
+
+.menuItem {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    @include font(1.4rem, $deeper-gray);
+    column-gap: min(24px, 1.67vw);
+
+    @include device(tab, mobile) {
+        display: none;
+    }
+}
+
+.menuLogo {
+    display: flex;
+    column-gap: 16px;
+    flex-direction: row;
+
+    @include device(mobile) {
+        div:not(:first-child) {
+            display: none;
+        }
+
+        width: calc(100% - 140px);
+        justify-content: flex-end;
+        padding-right: 16px;
+    }
+
+}
+
+.hamburgerMenu {
+    border: none;
+    background: none;
+    display: none;
+
+    @include device(tab, mobile) {
+        display: block;
+    }
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    max-width: 1192px;
+    margin: auto;
+
+    @include device(tab, mobile) {
+        display: none;
+    }
+}
+
+.rightMenu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    @include font(1.6rem, $body-text);
+    column-gap: min(24px, 1.67vw);
+}
+
+.phone {
+    display: flex;
+    column-gap: 35px;
+    align-items: center;
+}
+
+.number {
+    padding-left: 30px;
+    position: relative;
+    @include font(1.6rem, $body-text);
+
+    img {
+        position: absolute;
+        left: 0;
+    }
+}
+
+.requestCall {
+    padding: 12px 32px;
+    border: 1px solid $purple-accent;
+    @include font(1.6rem, $purple-accent)
+}

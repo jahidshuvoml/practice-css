@@ -1,0 +1,23 @@
+@mixin font($font-size: 1.4rem, $color: $black, $font-weight: 400, $line-height: inherit, $text-align: inherit) {
+    font-size: $font-size;
+    color: $color;
+    text-align: $text-align;
+    line-height: $line-height;
+}
+
+@mixin device($screens...) {
+    @each $screen in $screens {
+        @if $screen ==tab {
+            @media only screen and (max-width: 1120px) and (min-width: 768px) {
+                @content;
+            }
+        }
+
+        @if $screen ==mobile {
+            @media only screen and (max-width: 767px) {
+                @content;
+            }
+        }
+    }
+
+}
