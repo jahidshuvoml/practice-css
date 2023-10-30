@@ -42,6 +42,9 @@
     background: $purple-accent;
     border: none;
     @include font(1.6rem, $white);
+    &:hover{
+        cursor: pointer;
+    }
     svg {
         margin-right: 5px;
     }

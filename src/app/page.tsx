@@ -8,9 +8,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <HeroSlider />
-      <ItemSlider />
-      <KnowSection />
-      <Footer />
+      <ItemSlider title='Selected for you' className="section-margin"/>
+      <ItemSlider title='You must buy it now ' className="section-margin"/>
+      <KnowSection  className="section-margin"/>
+      <Footer  className="section-margin"/>
     </main>
   )
 }

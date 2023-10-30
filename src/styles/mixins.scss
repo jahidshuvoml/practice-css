@@ -29,3 +29,17 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.section-margin {
+    margin-top: 110px;
+
+    @include device(tab) {
+        margin-top: 80px;
+
+    }
+
+    @include device(mobile) {
+        margin-top: 60px;
+
+    }
+}

@@ -2,9 +2,9 @@ import Image from "next/image";
 import styles from "./knowSection.module.scss";
 import Map from "@/assets/Mapsicle Map.svg";
 
-export default function KnowSection() {
+export default function KnowSection({className}:Partial<HTMLDivElement> ) {
   return (
-    <div className={styles.main}>
+    <div className={`${styles.main} ${className}`}>
       <div className={styles.left}>
         <h1>Did you know us? </h1>
         <p>

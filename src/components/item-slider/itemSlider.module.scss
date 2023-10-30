@@ -2,4 +2,75 @@
 
 .main {
     width: 100%;
+    position: relative;
+
+    h1 {
+        @include font(3.8rem, $font-weight: 600);
+        margin-bottom: 47px;
+        @include elipses(1)
+    }
+}
+
+.container {
+    display: flex;
+    overflow: hidden;
+    // width: 400vw;
+    column-gap: 32px;
+}
+
+.pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 12px;
+
+    span {
+        background-color: $purple-accent;
+        opacity: .3;
+        height: 12px;
+        width: 12px;
+        border-radius: 6px;
+        margin-top: 43px;
+
+        @include device(tab) {
+            margin-top: 32px;
+        }
+        @include device(mobile) {
+            margin-top: 20px;
+        }
+    }
+}
+.navigation {
+    @include device(tab,mobile){
+        display: none;
+    }
+    button {
+        position: absolute;
+        background: none;
+        border: none;
+        height: 32px;
+        width: 32px;
+        top: 291px;
+        transform: translateY(-50%);
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:disabled {
+            opacity: 70%;
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+
+        &:first-child {
+            transform: rotate(180deg);
+            left: -48px;
+        }
+        &:last-child {
+            right: -48px;
+        }
+
+    }
 }

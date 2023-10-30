@@ -4,9 +4,9 @@ import FbIcon from "@/assets/fb.svg";
 import PaypalIcon from "@/assets/paypal.svg";
 import BrandLogo from "@/assets/brand-logo2.svg";
 
-export default function Footer() {
+export default function Footer({className}:Partial<HTMLDivElement>) {
   return (
-    <footer className={styles.main}>
+    <footer className={`${styles.main} ${className}`}>
       <div className={styles.menus}>
         <div className={styles.logo}>
             <Image src={BrandLogo} alt="" />
