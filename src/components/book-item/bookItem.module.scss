@@ -1,0 +1,48 @@
+@import '@/styles/index.scss';
+
+.main {
+    width: 274px;
+}
+
+.image {
+    height: 415px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.title {
+    @include font(2.4rem, $purple-black, bold);
+    @include elipses(1);
+    margin-bottom: 7px;
+
+    @include device(mobile) {
+        font-size: 16px;
+    }
+}
+
+.writer {
+    @include font(1.6rem, $body-text);
+    @include elipses(1);
+    margin-bottom: 14px;
+}
+
+.price {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    @include font(2rem, $black, bold);
+    margin-bottom: 29px;
+}
+.cart {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $purple-accent;
+    border: none;
+    @include font(1.6rem, $white);
+    svg {
+        margin-right: 5px;
+    }
+}

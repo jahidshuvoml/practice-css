@@ -7,17 +7,25 @@
 
 @mixin device($screens...) {
     @each $screen in $screens {
-        @if $screen ==tab {
+        @if $screen == tab {
             @media only screen and (max-width: 1120px) and (min-width: 768px) {
                 @content;
             }
         }
 
-        @if $screen ==mobile {
+        @if $screen == mobile {
             @media only screen and (max-width: 767px) {
                 @content;
             }
         }
     }
 
+}
+
+@mixin elipses($no-of-line:4, $max-width:100%){
+    display: -webkit-box;
+    max-width: $max-width;
+    -webkit-line-clamp: $no-of-line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

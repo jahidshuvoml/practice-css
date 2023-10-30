@@ -1,0 +1,79 @@
+@import '@/styles/index.scss';
+
+.main {
+    display: flex;
+    flex-direction: row;
+    column-gap: 60px;
+
+    @include device(tab, mobile) {
+        flex-direction: column;
+        row-gap: 40px;
+    }
+}
+
+.left {
+    width: 50%;
+    padding-top: 35px;
+
+    @include device(tab, mobile) {
+        width: fit-content;
+        max-width: 553px;
+    }
+
+    h1 {
+        @include font(38px);
+        margin-bottom: 31px;
+    }
+
+    p {
+        @include font(16px);
+        margin-bottom: 60px;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $purple-accent;
+        padding-bottom: 7px;
+
+        &:first-of-type {
+            margin-bottom: 32px;
+        }
+
+        &::placeholder {
+            @include font(1.6rem, rgb($purple-accent, .4))
+        }
+    }
+
+    button {
+        height: 50px;
+        width: 100%;
+        color: $white;
+        background: $purple-accent;
+        border: none;
+        margin-top: 48px;
+    }
+}
+
+.right {
+    width: 50%;
+
+    @include device(tab, mobile) {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+
+        @include device(tab) {
+            max-width: 768px;
+            max-height: 100%;
+        }
+
+        @include device(mobile) {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}

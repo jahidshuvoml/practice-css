@@ -1,0 +1,186 @@
+@import '../../styles/index.scss';
+
+.slider {
+    position: relative;
+    padding-bottom: 101px;
+
+    @include device(tab, mobile) {
+        padding-bottom: 20px;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+
+    @include device(mobile) {
+        flex-direction: column;
+    }
+}
+
+.left {
+    padding-left: 40px;
+    padding-top: 100px;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    row-gap: 32px;
+
+    @include device(tab, mobile) {
+        padding-left: 0px;
+        padding-top: 0px;
+    }
+
+    @include device(mobile) {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    h1 {
+        @include font(4.8rem, black, bold);
+        @include elipses(2);
+
+        @include device(mobile) {
+            @include font(2.8rem);
+        }
+    }
+
+    p {
+        @include font(1.6rem, $body-text);
+        @include elipses(4, 478px);
+    }
+
+    a {
+        padding: 12px 32px;
+        @include font(1.6rem, $white, 500);
+        background-color: $purple-accent;
+        width: fit-content;
+        border-radius: 2px;
+    }
+}
+
+.author {
+    padding: 10px;
+    border: 1px solid $violet;
+    border-radius: 3px;
+    width: fit-content;
+    @include font(1.4rem, $violet);
+}
+
+.right {
+    position: relative;
+    width: 41%;
+    padding-left: 100px;
+
+    @include device(tab) {
+        padding-left: 50px;
+        width: 50%;
+    }
+
+    @include device(mobile) {
+        width: 100%;
+        padding-left: 60px;
+    }
+
+    img {
+        height: 100%;
+    }
+}
+
+.banner {
+    height: 445px;
+
+    @include device(tab) {
+        height: 404px;
+    }
+
+    @include device(mobile) {
+        height: 258px;
+    }
+}
+
+.specialOffer {
+    position: absolute;
+    left: 0;
+    top: 65px;
+    @include font(1.8rem, rgb($black-note, .8), 400, 28px, left);
+    letter-spacing: 1.8px;
+    width: 162px;
+
+    @include device(tab, mobile) {
+        display: none;
+    }
+}
+
+.isStockAvailable {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include font(1.6rem, $black-proto);
+
+    @include device(tab, mobile) {
+        display: none;
+    }
+}
+
+.indicator {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    height: 315px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    span {
+        width: 1px;
+        border-radius: 3px;
+        max-height: 100%;
+        background-color: $purple-accent;
+        opacity: .3;
+    }
+
+    :global {
+        .active {
+            opacity: 1;
+        }
+    }
+
+    @include device(tab, mobile) {
+        display: none;
+    }
+}
+
+.navigation {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+
+    button {
+        background: none;
+        border: none;
+        height: 32px;
+        width: 32px;
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:disabled {
+            opacity: 70%;
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+
+        &:first-child {
+            transform: rotate(180deg);
+            margin-right: 24px;
+        }
+
+    }
+}
