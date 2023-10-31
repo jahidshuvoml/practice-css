@@ -43,6 +43,9 @@
         &::placeholder {
             @include font(1.6rem, rgb($purple-accent, .4))
         }
+        &:focus-visible {
+            outline: none;
+        }
     }
 
     button {

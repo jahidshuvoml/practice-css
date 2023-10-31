@@ -1,12 +1,8 @@
 @import '@/styles/index.scss';
 
 .main {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100vw;
     background: $purple-accent;
-    transform: translateY(100%);
 }
 
 .menus {

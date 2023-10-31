@@ -1,0 +1,39 @@
+@import '../../styles/index.scss';
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+
+    @include device(tab, mobile) {
+        flex-wrap: wrap;
+        row-gap: 34px;
+
+        :global {
+            .vertical-line {
+                display: none;
+            }
+        }
+    }
+    @include device(mobile) {
+        row-gap: 28px;
+    }
+
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        margin-left: 20px;
+        @include font(2.4rem, $black, 600);
+        @include elipses(1);
+
+        @include device(mobile) {
+            font-size: 2rem;
+        }
+
+    }
+}
