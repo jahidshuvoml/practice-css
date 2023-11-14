@@ -52,6 +52,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 123px;
+
     p {
         @include font(1.2rem, rgb($purple-accent, .6))
     }
@@ -122,9 +123,54 @@
     border: none;
     background: none;
     display: none;
+    z-index: 2;
+    position: relative;
+    height: 16.5px;
+    width: 21px;
+    &:hover {
+        cursor: pointer;
+    }
 
     @include device(tab, mobile) {
         display: block;
+    }
+
+    img {
+        position: absolute;
+        left: 0;
+        transition: all .5s;
+
+        &:first-child {
+            top: 0;
+        }
+
+        &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:last-child {
+            bottom: 0;
+        }
+    }
+}
+
+.drawerOpen {
+    img {
+        transform-origin: left;
+
+        &:first-child {
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        &:last-child {
+            transform: rotate(-45deg);
+        }
     }
 }
 

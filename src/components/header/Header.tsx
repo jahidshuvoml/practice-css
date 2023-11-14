@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import styles from "./header.module.scss";
 import BrandLogo from "@/assets/brand-logo.svg";
@@ -9,9 +10,21 @@ import CartIcon from "@/assets/cart.svg";
 import FavouriteIcon from "@/assets/favourites.svg";
 import UserIcon from "@/assets/user-icon.svg";
 import PhoneIcon from "@/assets/phone.svg";
-import HamburgerMenu from "@/assets/hamburger-menu.svg";
+import HamburgerMenu from "@/assets/hamburger-line.svg";
+import DrawerMenu from "../drawer-menu/DrawerMenu";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const [isDrawerOpen, setIsdrawerOepn] = useState(false);
+
+  useEffect(() => {
+    if (isDrawerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isDrawerOpen]);
+
   return (
     <div className={styles.header}>
       <hr />
@@ -58,7 +71,14 @@ export default function Header() {
           <VerticalLine height={20} />
           <IconWithNumber image={UserIcon} alt="user" />
         </div>
-        <button className={styles.hamburgerMenu}>
+        <button
+          className={`${styles.hamburgerMenu} ${
+            isDrawerOpen ? styles.drawerOpen : ""
+          }`}
+          onClick={() => setIsdrawerOepn(!isDrawerOpen)}
+        >
+          <Image src={HamburgerMenu} alt="menu" />
+          <Image src={HamburgerMenu} alt="menu" />
           <Image src={HamburgerMenu} alt="menu" />
         </button>
       </div>
@@ -93,6 +113,7 @@ export default function Header() {
           <div className={styles.requestCall}>Request a call</div>
         </div>
       </div>
+      <DrawerMenu isOpen={isDrawerOpen} />
     </div>
   );
 }
